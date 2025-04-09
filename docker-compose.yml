@@ -43,9 +43,7 @@ services:
       - ourchive
 
   ourchive:
-    image: ourchive:latest
-    #build: .
-    #container_name: ourchive
+    image: ourchiveio/ourchive:latest
     environment: *default-back-environment
     volumes: *default-back-volumes
     networks:
