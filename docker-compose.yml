@@ -7,7 +7,7 @@ x-environment:
   OURCHIVE_DB_HOST: "${OURCHIVE_DB_HOST}"
   # Web settings
   SECRET_KEY: "${OURCHIVE_SECRET_KEY}"
-  OURCHIVE_SITES_SCHEME: "${OURCHIVE_SITES_SCHEME}"
+  OURCHIVE_SITES_SCHEME: "${OURCHIVE_SCHEME}"
   OURCHIVE_SECRET_KEY: "${OURCHIVE_SECRET_KEY}"
   OURCHIVE_DB_PW: "${OURCHIVE_DB_PW}"
   OURCHIVE_INTEGRATION_DB_NAME: "${OURCHIVE_INTEGRATION_DB_NAME}"
@@ -39,6 +39,9 @@ x-environment:
   OURCHIVE_FILE_PROCESSOR: "${OURCHIVE_FILE_PROCESSOR}"
   OURCHIVE_S3_ENDPOINT_PROTOCOL: "${OURCHIVE_S3_ENDPOINT_PROTOCOL}"
   OURCHIVE_DOCKER: "${OURCHIVE_DOCKER}"
+  OURCHIVE_SUPERUSER_NAME: "${OURCHIVE_SUPERUSER_NAME}"
+  OURCHIVE_SUPERUSER_EMAIL: "${OURCHIVE_SUPERUSER_EMAIL}"
+  OURCHIVE_SUPERUSER_PASSWORD: "${OURCHIVE_SUPERUSER_PASSWORD}"
   # Email settings.
   # EMAIL_BACKEND: "django.core.mail.backends.${EMAIL_BACKEND}.EmailBackend"
   # DEFAULT_FROM_EMAIL: "${EMAIL_DEFAULT_FROM}"
@@ -73,7 +76,8 @@ services:
       - ourchive
 
   ourchive:
-    image: ourchiveio/ourchive:latest
+    #image: ourchiveio/ourchive:latest
+    image: ourchive
     environment: *default-back-environment
     volumes: *default-back-volumes
     networks:
