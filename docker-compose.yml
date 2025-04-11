@@ -76,8 +76,7 @@ services:
       - ourchive
 
   ourchive:
-    #image: ourchiveio/ourchive:latest
-    image: ourchive
+    image: ourchiveio/ourchive:latest
     environment: *default-back-environment
     volumes: *default-back-volumes
     networks:
