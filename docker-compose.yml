@@ -59,7 +59,9 @@ x-volumes:
 
 services:
   ourchive-db:
-    image: postgres:16.8
+    build:
+      context: .
+      dockerfile: pg-Dockerfile
     environment:
       POSTGRES_DB: "${OURCHIVE_DB_NAME}"
       POSTGRES_USER: "${OURCHIVE_DB_USER}"
