@@ -1,5 +1,4 @@
-psql -v ON_ERROR_STOP=1 --username "$POSTGRES_USER" <<EOF
-create extension pg_trgm;
-select * FROM pg_extension;
-\q
-<<EOF
+psql -v ON_ERROR_STOP=1 --username "$POSTGRES_USER" -f exts.sql
+echo "End of the script"
+
+exit
